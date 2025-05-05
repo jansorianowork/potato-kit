@@ -1,0 +1,58 @@
+:root {
+    --card-bg: #ffffff;
+    --card-foreground: #111111;
+    --card-border: #e0e0e0;
+    --card-muted: #666666;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Root card container */
+  .card {
+    background-color: var(--card-bg);
+    color: var(--card-foreground);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+  }
+  
+  /* Card header */
+  .card-header {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+  
+  /* Title */
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+  }
+  
+  /* Description */
+  .card-description {
+    font-size: 0.875rem;
+    color: var(--card-muted);
+    margin: 0;
+  }
+  
+  /* Content */
+  .card-content {
+    padding: 1.5rem;
+    padding-top: 0;
+    font-size: 1rem;
+  }
+  
+  /* Footer */
+  .card-footer {
+    padding: 1.5rem;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+  

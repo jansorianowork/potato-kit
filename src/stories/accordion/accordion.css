@@ -1,0 +1,31 @@
+.storybook-accordion {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	overflow: hidden;
+	font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 800px;
+}
+
+.storybook-accordion-item {
+	border-bottom: 1px solid #ddd;
+}
+
+.storybook-accordion-trigger {
+	background-color: #f9f9f9;
+	padding: 12px 16px;
+	font-weight: bold;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.storybook-accordion-trigger:hover {
+	background-color: #f1f1f1;
+}
+
+.storybook-accordion-content {
+	padding: 12px 16px;
+	background-color: #fff;
+	color: #333;
+}
