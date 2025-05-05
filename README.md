@@ -1,50 +1,84 @@
-# React + TypeScript + Vite
+# 🥔 Potato Kit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Reusable component kit built with React, TypeScript, Storybook, and Tailwind CSS. Powered by Radix UI and Embla Carousel, designed for atomic scalability and rapid development.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Scripts
 
-## Expanding the ESLint configuration
+| Command                | Description                               |
+| ---------------------- | ----------------------------------------- |
+| `yarn dev`             | Start the Vite dev server                 |
+| `yarn build`           | Build the project using TypeScript + Vite |
+| `yarn lint`            | Run ESLint on the codebase                |
+| `yarn preview`         | Preview the Vite build output             |
+| `yarn storybook`       | Start Storybook on `localhost:6006`       |
+| `yarn build-storybook` | Build the Storybook static site           |
+| `yarn generate-story`  | Custom script to generate a component     |
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Generate a story folder
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+You can generate a new component folder with a `.tsx` file, a corresponding `.css` file, and a `.stories.tsx` file using:
+
+```bash
+yarn generate-story StoryName
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This will create the following structure under `src/stories/`:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+stories/
+├── storyname.css          // Lowercase CSS file
+├── StoryName.tsx          // Component file (PascalCase)
+└── StoryName.stories.tsx  // Storybook file
+```
+
+> ⚠️ If the folder already exists, the script will warn and exit to prevent overwriting.
+
+---
+
+## 🧩 Tech Stack
+
+-   **React 18**
+-   **TypeScript**
+-   **Vite**
+-   **Tailwind CSS**
+-   **Radix UI Primitives**
+-   **Storybook 8**
+-   **Embla Carousel**
+-   **Lucide Icons**
+-   **Class Utilities**: `clsx`, `class-variance-authority`, `tailwind-merge`
+
+---
+
+## 📁 Project Structure (Partial)
+
+```
+src/
+├── components/
+│   └── Button/
+│       ├── button.css
+│       ├── Button.tsx
+│       └── Button.stories.tsx
+├── styles/
+├── utils/
+├── ...
+```
+
+---
+
+## ✅ Linting & Formatting
+
+ESLint is set up with React, Storybook, and TypeScript rules:
+
+```bash
+yarn lint
+```
+
+---
+
+## License
+
+MIT — © 2025 Potato Kit
