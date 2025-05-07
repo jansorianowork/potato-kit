@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { formatNumber } from "@/lib/utils";
 import { Column } from "@/lib/tabletypes";
 
 type SortOrder = "asc" | "desc";
 
-interface DataTableProps<T extends Record<string, any>> {
+interface DataTableProps<T extends Record<string, unknown>> {
 	data: T[];
 	columns: Column[];
 	itemsPerPage?: number;
@@ -14,12 +13,10 @@ interface DataTableProps<T extends Record<string, any>> {
 	calculateTotal?: (key: keyof T) => number; // Function to calculate totals
 }
 
-export default function DataTable<T extends Record<string, any>>({
+export default function DataTable<T extends Record<string, unknown>>({
 	data,
 	columns,
 	itemsPerPage = 10,
-	showTotalRow = false,
-	calculateTotal,
 }: DataTableProps<T>) {
 	const [sortColumn, setSortColumn] = useState<keyof T | null>(null);
 	const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
@@ -95,32 +92,12 @@ export default function DataTable<T extends Record<string, any>>({
 										isNumeric ? "text-center" : "text-left"
 									}`}
 								>
-									{typeof item[key] === "number"
-										? formatNumber(item[key] as number)
-										: String(item[key])}
+									{String(item[key])}
 								</td>
 							))}
 						</tr>
 					))}
 					{/* Total Row (Optional) */}
-					{showTotalRow && calculateTotal && (
-						<tr className="font-bold border-t">
-							{columns.map(({ key, isNumeric }) => (
-								<td
-									key={String(key)}
-									className={`p-2 ${
-										isNumeric ? "text-center" : "text-left"
-									}`}
-								>
-									{key === "gmv"
-										? `Total GMV: ${formatNumber(
-												calculateTotal(key as keyof T)
-										  )}`
-										: ""}
-								</td>
-							))}
-						</tr>
-					)}
 				</tbody>
 			</table>
 			{/* Pagination Controls */}

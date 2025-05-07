@@ -9,10 +9,7 @@ if (!componentName) {
 	);
 	process.exit(1);
 }
-
-const baseDir = join("src", "stories", componentName.toLowerCase());
-mkdirSync(baseDir, { recursive: true });
-
+const baseDir = join('src', 'stories', componentName.toLowerCase());
 // 🚨 Check if component folder already exists
 if (existsSync(baseDir)) {
 	console.error(
@@ -20,6 +17,8 @@ if (existsSync(baseDir)) {
 	);
 	process.exit(1);
 }
+mkdirSync(baseDir, { recursive: true });
+
 
 // Lowercase CSS file
 const cssFile = join(baseDir, `${componentName.toLowerCase()}.css`);
