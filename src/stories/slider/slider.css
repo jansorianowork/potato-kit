@@ -1,0 +1,13 @@
+/* stories/slider.css */
+.slider-wrapper {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.slider-value {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
