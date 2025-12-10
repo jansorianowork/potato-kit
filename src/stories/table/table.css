@@ -1,0 +1,91 @@
+/* Table wrapper */
+.storybook-table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #ffffff;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header styling */
+.storybook-table thead {
+	background-color: #f5f5f5;
+	border-bottom: 2px solid #e0e0e0;
+}
+
+.storybook-table th {
+	padding: 12px 16px;
+	text-align: left;
+	font-weight: 600;
+	font-size: 14px;
+	color: #333333;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* Table body styling */
+.storybook-table tbody tr {
+	border-bottom: 1px solid #e0e0e0;
+	transition: background-color 0.2s ease;
+}
+
+.storybook-table tbody tr:hover {
+	background-color: #f9f9f9;
+}
+
+.storybook-table tbody tr:last-child {
+	border-bottom: none;
+}
+
+.storybook-table td {
+	padding: 12px 16px;
+	font-size: 14px;
+	color: #666666;
+}
+
+/* Table footer styling */
+.storybook-table tfoot {
+	background-color: #f5f5f5;
+	border-top: 2px solid #e0e0e0;
+	font-weight: 600;
+}
+
+.storybook-table tfoot td {
+	padding: 12px 16px;
+	color: #333333;
+}
+
+/* Table caption styling */
+.storybook-table caption {
+	padding: 12px 16px;
+	text-align: left;
+	font-size: 12px;
+	color: #999999;
+	margin-bottom: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+	.storybook-table {
+		font-size: 12px;
+	}
+
+	.storybook-table th,
+	.storybook-table td {
+		padding: 8px 12px;
+	}
+}
+
+/* Text alignment utilities */
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
