@@ -4,7 +4,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 	AccordionContent,
-} from "./Accordion";
+} from "@/components/ui/accordion";
 import "./accordion.css";
 
 /**
@@ -33,7 +33,8 @@ const meta: Meta<typeof Accordion> = {
 		type: {
 			control: "radio",
 			options: ["single", "multiple"],
-			description: "Sets whether only one or multiple items can be expanded",
+			description:
+				"Sets whether only one or multiple items can be expanded",
 		},
 		collapsible: {
 			control: "boolean",
@@ -61,19 +62,22 @@ export const Default: Story = {
 			<AccordionItem value="item-1">
 				<AccordionTrigger>Item 1</AccordionTrigger>
 				<AccordionContent>
-					This is the content for Item 1. You can place any text or elements here.
+					This is the content for Item 1. You can place any text or
+					elements here.
 				</AccordionContent>
 			</AccordionItem>
 			<AccordionItem value="item-2">
 				<AccordionTrigger>Item 2</AccordionTrigger>
 				<AccordionContent>
-					This is the content for Item 2. You can place any text or elements here.
+					This is the content for Item 2. You can place any text or
+					elements here.
 				</AccordionContent>
 			</AccordionItem>
 			<AccordionItem value="item-3">
 				<AccordionTrigger>Item 3</AccordionTrigger>
 				<AccordionContent>
-					This is the content for Item 3. You can place any text or elements here.
+					This is the content for Item 3. You can place any text or
+					elements here.
 				</AccordionContent>
 			</AccordionItem>
 		</Accordion>
@@ -81,8 +85,49 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"A default accordion with three items. Only one item can be open at a time, and items are collapsible.",
+				story: "A default accordion with three items. Only one item can be open at a time, and items are collapsible.",
+			},
+		},
+	},
+};
+
+/**
+ * Multiple accordion items can be expanded simultaneously.
+ */
+export const Multiple: Story = {
+	args: {
+		type: "multiple",
+		className: "storybook-accordion",
+	},
+	render: (args) => (
+		<Accordion {...args}>
+			<AccordionItem value="item-1">
+				<AccordionTrigger>Item 1</AccordionTrigger>
+				<AccordionContent>
+					This is the content for Item 1. You can place any text or
+					elements here.
+				</AccordionContent>
+			</AccordionItem>
+			<AccordionItem value="item-2">
+				<AccordionTrigger>Item 2</AccordionTrigger>
+				<AccordionContent>
+					This is the content for Item 2. You can place any text or
+					elements here.
+				</AccordionContent>
+			</AccordionItem>
+			<AccordionItem value="item-3">
+				<AccordionTrigger>Item 3</AccordionTrigger>
+				<AccordionContent>
+					This is the content for Item 3. You can place any text or
+					elements here.
+				</AccordionContent>
+			</AccordionItem>
+		</Accordion>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story: "An accordion with multiple items that can be expanded simultaneously. Multiple items can be open at the same time.",
 			},
 		},
 	},
