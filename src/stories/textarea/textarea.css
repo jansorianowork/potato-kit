@@ -1,0 +1,156 @@
+/* Textarea wrapper */
+.storybook-textarea {
+	width: 100%;
+	max-width: 500px;
+	padding: 12px 16px;
+	border: 1px solid #e0e0e0;
+	border-radius: 6px;
+	font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #333333;
+	background-color: #ffffff;
+	transition: all 0.2s ease;
+	resize: vertical;
+}
+
+/* Textarea focus state */
+.storybook-textarea:focus {
+	outline: none;
+	border-color: #1ea7fd;
+	box-shadow: 0 0 0 3px rgba(30, 167, 253, 0.1);
+}
+
+/* Textarea hover state */
+.storybook-textarea:hover:not(:disabled) {
+	border-color: #d0d0d0;
+}
+
+/* Textarea placeholder */
+.storybook-textarea::placeholder {
+	color: #999999;
+	opacity: 1;
+}
+
+/* Disabled textarea */
+.storybook-textarea:disabled {
+	background-color: #f5f5f5;
+	border-color: #e0e0e0;
+	color: #999999;
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+/* Read-only textarea */
+.storybook-textarea:read-only {
+	background-color: #f9f9f9;
+	border-color: #e0e0e0;
+	cursor: default;
+}
+
+/* Error state */
+.storybook-textarea.error,
+.storybook-textarea.border-red-500 {
+	border-color: #ef4444;
+	background-color: #fef2f2;
+}
+
+.storybook-textarea.error:focus,
+.storybook-textarea.border-red-500:focus {
+	border-color: #ef4444;
+	box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Success state */
+.storybook-textarea.success,
+.storybook-textarea.border-green-500 {
+	border-color: #22c55e;
+	background-color: #f0fdf4;
+}
+
+.storybook-textarea.success:focus,
+.storybook-textarea.border-green-500:focus {
+	border-color: #22c55e;
+	box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* Warning state */
+.storybook-textarea.warning,
+.storybook-textarea.border-yellow-500 {
+	border-color: #eab308;
+	background-color: #fefce8;
+}
+
+.storybook-textarea.warning:focus,
+.storybook-textarea.border-yellow-500:focus {
+	border-color: #eab308;
+	box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.1);
+}
+
+/* Textarea size variations */
+.storybook-textarea.small {
+	min-height: 60px;
+	font-size: 12px;
+	padding: 8px 12px;
+}
+
+.storybook-textarea.medium {
+	min-height: 120px;
+	font-size: 14px;
+	padding: 12px 16px;
+}
+
+.storybook-textarea.large {
+	min-height: 200px;
+	font-size: 14px;
+	padding: 12px 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+	.storybook-textarea {
+		max-width: 100%;
+		font-size: 16px; /* Prevents zoom on iOS */
+	}
+}
+
+/* Character count indicator */
+.textarea-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+}
+
+.textarea-char-count {
+	font-size: 12px;
+	color: #999999;
+	margin-top: 4px;
+	text-align: right;
+}
+
+/* Label styling (if needed) */
+.textarea-label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 600;
+	font-size: 14px;
+	color: #333333;
+}
+
+.textarea-label.required::after {
+	content: " *";
+	color: #ef4444;
+}
+
+/* Helper text */
+.textarea-helper-text {
+	font-size: 12px;
+	color: #666666;
+	margin-top: 4px;
+}
+
+.textarea-error-text {
+	font-size: 12px;
+	color: #ef4444;
+	margin-top: 4px;
+}
